@@ -1,0 +1,1072 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Logo area */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 75px;
+    width: auto;
+    padding-left: 2%;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/* Nav links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links .active{
+    color: #006400;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect: color change + underline animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #006400;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #006400;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: #fff;
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: #006400;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.hero {
+    height: 100vh;
+    /* fullscreen */
+    background: url('../img/hero1.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Overlay */
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* vertical center */
+    justify-content: flex-start;
+    /* content ke kiri */
+}
+
+/* Content kiri dengan padding */
+.hero-content {
+    color: #ffffff;
+    max-width: 750px;
+    padding-left: 80px;
+    /* jarak dari kiri */
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-hero {
+    height: 100vh;
+    /* fullscreen */
+    background: url('../img/about-hero.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Overlay */
+.about-hero-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* vertical center */
+    justify-content: flex-start;
+    /* content ke kiri */
+}
+
+/* Content kiri dengan padding */
+.about-hero-content {
+    color: #ffffff;
+    max-width: 750px;
+    padding-left: 80px;
+    /* jarak dari kiri */
+}
+
+.about-hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-section{
+    padding: 100px 40px;
+    background: #f9f9f9;
+    /* kontras lembut biar beda dari hero */
+}
+
+.about-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #006400;
+    /* deep green */
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    /* biar underline cuma sepanjang teks */
+    cursor: pointer;
+    /* opsional, kasih feel interaktif */
+}
+
+.about-section h2::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #006400;
+    transition: width 0.3s ease;
+}
+
+.about-section h2:hover::after {
+    width: 100%;
+}
+
+.about-section p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 15px;
+
+
+}
+.values{
+    height: 300px;
+        /* fullscreen */
+    background: url('../img/biogas.png') no-repeat center center/cover;
+    position: relative;
+}
+
+.values-overlay {
+    background: rgba(0, 0, 0, 0.4);        
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.values-content{
+    text-align: center;
+}
+
+.values-content h2{
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.values-content h2::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.values-content h2:hover::after{
+    width: 100%;
+}
+
+.values-content p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* Vision & Mission container */
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    margin: 60px 0;
+}
+
+/* Vision box */
+.vision-box {
+    flex: 1;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Mission box */
+.mission-box {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.vision-box h2,
+.mission-box h2 {
+    font-size: 1.8rem;
+    color: #006400;
+    margin-bottom: 15px;
+}
+
+.vision-box p,
+.mission-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .vision-mission {
+        flex-direction: column;
+    }
+}
+
+.business-hero {
+    height: 100vh;
+    background: url('../img/business.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Overlay */
+.business-hero-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* vertical center */
+    justify-content: flex-start;
+    /* content ke kiri */
+}
+
+/* Content kiri dengan padding */
+.business-hero-content {
+    color: #ffffff;
+    max-width: 750px;
+    padding-left: 80px;
+    /* jarak dari kiri */
+}
+
+.business-hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+.about-business-section {
+    padding: 100px 40px;
+    background: #f9f9f9;
+    /* kontras lembut biar beda dari hero */
+}
+
+.about-business-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #006400;
+    /* deep green */
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    /* biar underline cuma sepanjang teks */
+    cursor: pointer;
+    /* opsional, kasih feel interaktif */
+}
+
+.about-business-section h2::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #006400;
+    transition: width 0.3s ease;
+}
+
+.about-business-section h2:hover::after {
+    width: 100%;
+}
+
+.about-business-section p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 15px;
+
+
+}
+
+
+
+
+
+.about {
+    padding: 100px 40px;
+    background: #f9f9f9;
+    /* kontras lembut biar beda dari hero */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    max-width: 1200px;
+}
+
+.about h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #006400;
+    /* deep green */
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    /* biar underline cuma sepanjang teks */
+    cursor: pointer;
+    /* opsional, kasih feel interaktif */
+}
+
+.about h2::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #006400;
+    transition: width 0.3s ease;
+}
+
+.about h2:hover::after {
+    width: 100%;
+}
+
+.about p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.businesses {
+    padding: 0;
+    margin-bottom: 40px;
+    /* biar grid full edge-to-edge */
+}
+
+.business-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 400px;
+}
+
+/* Left info */
+.business-info {
+    background: #006400;
+    /* deep green */
+    color: #fff;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.business-info h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.business-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Business items with background image */
+.business-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.business-item .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    /* dark overlay */
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.business-item a h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.branch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+}
+
+
+/* Business items with background image */
+.branch-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.branch-item .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    /* dark overlay */
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.branch-item a h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+
+
+/* Hover underline effect for business titles */
+.links {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.links::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    /* underline putih biar kontras di background */
+    transition: width 0.3s ease;
+}
+
+.links:hover::after {
+    width: 100%;
+}
+
+.business-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Background images */
+.geothermal {
+    background-image: url('../img/hero1.jpg');
+    /* ganti dengan gambar geothermal */
+}
+
+.bioenergy {
+    background-image: url('../img/bioenergy.jpg');
+    /* ganti dengan gambar bioenergy */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .business-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.news-section {
+    padding: 60px 10%;
+    background: #fff;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #006400;
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.news-card {
+    background: #fdfdfd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.news-category.investors {
+    background: #064635;
+    /* deep green */
+}
+
+.news-category.operations {
+    background: #227C70;
+    /* teal green */
+}
+
+.news-category.esg {
+    background: #5F8D4E;
+    /* lighter green */
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-content h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    color: #064635;
+}
+
+.news-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.news-content a {
+    text-decoration: none;
+    color: #227C70;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.news-content a:hover {
+    color: #064635;
+}
+
+.csr {
+    padding: 100px 40px;
+    background: #f9f9f9;
+    margin-bottom: 50px;
+    /* kontras lembut biar beda dari hero */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.csr-content {
+    max-width: 1200px;
+}
+
+.csr h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #006400;
+    /* deep green */
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    /* biar underline cuma sepanjang teks */
+    cursor: pointer;
+    /* opsional, kasih feel interaktif */
+}
+
+.csr h2::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #006400;
+    transition: width 0.3s ease;
+}
+
+.csr h2:hover::after {
+    width: 100%;
+}
+
+.csr p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.csr-content a {
+    text-decoration: none;
+    color: #006400;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.csr-content a:hover {
+    color: #227C70;
+}
+
+.quote-section {
+    background: #006400;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.quote-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    /* overlay biar text jelas */
+}
+
+.quote-container {
+    position: relative;
+    max-width: 800px;
+    z-index: 2;
+}
+
+.quote {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.author {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.footer {
+    background-color: #808080;
+    /* Dark background */
+    color: #fff;
+    padding: 50px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo {
+    flex: 1 1 250px;
+    margin-bottom: 30px;
+}
+
+.footer-logo .logo {
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.address {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.footer-links {
+    display: flex;
+    flex: 2 1 500px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 0 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #4caf50;
+    /* Deep Green for hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #fff;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+
+    /* Navbar */
+    .nav-links {
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .hero-content {
+        padding-left: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .about,
+    .csr {
+        padding: 70px 20px;
+    }
+
+    .business-info {
+        padding: 40px 25px;
+    }
+
+    .business-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .business-item .overlay {
+        padding: 25px;
+    }
+
+    .quote {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    /* Navbar: jadi burger menu */
+    .burger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #ffffff;
+        width: 200px;
+        text-align: right;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 12px 0;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .business-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .business-info {
+        text-align: center;
+        align-items: center;
+    }
+
+    .business-item .overlay {
+        text-align: center;
+        padding: 30px 15px;
+    }
+
+    .news-section {
+        padding: 40px 20px;
+    }
+
+    .csr {
+        padding: 60px 20px;
+    }
+
+    .csr h2 {
+        font-size: 2rem;
+    }
+
+    .quote-section {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .quote {
+        font-size: 1.4rem;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .about h2,
+    .csr h2 {
+        font-size: 1.6rem;
+    }
+
+    .about p,
+    .csr p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .news-content h3 {
+        font-size: 1rem;
+    }
+
+    .news-content p {
+        font-size: 0.9rem;
+    }
+
+    .quote {
+        font-size: 1.2rem;
+    }
+
+    .author {
+        font-size: 1rem;
+    }
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
